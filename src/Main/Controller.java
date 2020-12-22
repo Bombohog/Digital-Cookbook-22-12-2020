@@ -11,9 +11,7 @@ import java.util.List;
 
 public class Controller {
 
-
-    public ArrayList<Object> recipeArrayList = new ArrayList<>();
-
+    // EKSEMPEL GUI
     // TabPane
     @FXML
     TabPane main;
@@ -55,14 +53,12 @@ public class Controller {
     ArrayList<Ingredient> newIngredientList = new ArrayList<>();
     //</editor-fold>
 
-    // TODO list of main tabs
-    // TODO list of all recipes that is to be placed in the recipe list
-
+    // EKSEMPEL ArrayList + Kontrolstruktur
     public void updateRecipeList() {
 
         ArrayList<Object> recipeObjects = new ArrayList<>();
 
-        for (int i = 0; i < recipeArrayList.size(); i++) {
+        for (int i = 0; i < RecipeArchive.getRecipes().size(); i++) {
 
             recipeObjects.add(RecipeArchive.getRecipes().get(i).getRecipeContainer());
 
@@ -76,14 +72,11 @@ public class Controller {
 
     public void openRecipe(Recipe recipe) {
 
-        // TODO input the correct information in the boxes on the recipeTab
         name.setText(recipe.getName());
         time.setText(recipe.getTime());
-
         description.setText(recipe.getDescription());
-
-        recipe.updateIngredientListGUI();
-
+        method.setText(recipe.getMethod());
+        recipe.updateIngredientListGUI(ingredients);
         SingleSelectionModel<Tab> selectionModel = main.getSelectionModel(); // stores all the tabs from main into a list
         selectionModel.select(recipeTab); // Select recipe tab
 
@@ -93,7 +86,6 @@ public class Controller {
     //<editor-fold-desc="New Recipe">
     public void newRecipe() {
 
-        // TODO
         newIngredientList = new ArrayList<Ingredient>();
         newRecipeName.clear();
         newRecipeDescription.clear();
@@ -143,9 +135,8 @@ public class Controller {
             newRecipeTime.clear();
             newRecipeIngredientList.getChildren().clear();
 
-            // Select recipe tab
-            SingleSelectionModel<Tab> selectionModel = main.getSelectionModel(); // stores all the tabs from main into a list
-            selectionModel.select(recipeTab); // selects the tab to open, either with object or index
+            // Open recipe
+            openRecipe(newRecipe);
 
         }
 
@@ -153,21 +144,22 @@ public class Controller {
 
     public void addNewIngredient() {
 
-        // TODO
         Ingredient newIngredient = new Ingredient();
-        newIngredient.getNewAmount().setOnAction(e -> newIngredient.setAmount(newIngredient.getNewAmount().getText()));
-        newIngredient.getNewName().setOnAction(e -> newIngredient.setName(newIngredient.getNewName().getText()));
-        newIngredient.getNewMeasure().setOnAction(e -> newIngredient.setMeasure(newIngredient.getNewMeasure().getText()));
+        newIngredient.getNewAmount().setOnKeyTyped(e -> newIngredient.setAmount(newIngredient.getNewAmount().getText()));
+        newIngredient.getNewName().setOnKeyTyped(e -> newIngredient.setName(newIngredient.getNewName().getText()));
+        newIngredient.getNewMeasure().setOnKeyTyped(e -> newIngredient.setMeasure(newIngredient.getNewMeasure().getText()));
         newRecipeIngredientList.getChildren().add(newIngredient.getNewContainer());
         newIngredientList.add(newIngredient);
 
     }
     //</editor-fold>
 
-    // saving and reading of recipes
+    // EKSEMPEL Persistens
+    // Saving and reading of recipes
     //<editor-fold-desc="Saving'n'Loading">
     public static void saveArchive() {
 
+        // EKSEMPEL Exceptions
         try
         {
             FileOutputStream fos = new FileOutputStream("archiveData");
@@ -187,6 +179,7 @@ public class Controller {
 
     public static void loadArchive() {
 
+        // EKSEMPEL Exceptions
         try
         {
             FileInputStream fis = new FileInputStream("archiveData");
@@ -208,8 +201,6 @@ public class Controller {
             c.printStackTrace();
             return;
         }
-
-        new Controller().updateRecipeList(); // TODO
 
     }
     //</editor-fold>

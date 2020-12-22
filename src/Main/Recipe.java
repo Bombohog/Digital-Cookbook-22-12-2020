@@ -21,10 +21,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Recipe {
+public class Recipe implements Serializable {
 
+    // EKSEMPEL Variabler
     private String name; // Name of the dish
     private String description; // Some text to describe what it is or something
     private String method; // The way to make the recipe into reality
@@ -48,9 +51,11 @@ public class Recipe {
     Label recipeTime;
     //</editor-fold>
 
+    // EKSEMPEL GUI
     public void createContainer() {
 
-        Separator separator = new Separator(Orientation.VERTICAL);
+        Separator separator1 = new Separator(Orientation.VERTICAL);
+        Separator separator2 = new Separator(Orientation.VERTICAL);
 
         imageView = new ImageView(img);
         imageView.setFitWidth(128);
@@ -82,22 +87,37 @@ public class Recipe {
         childContainer.setMaxSize(578, 128);
         childContainer.setMargin(recipeName, new Insets(0, 0, 5, 0));
 
-        recipeContainer = new HBox(imageView, separator, childContainer, separator, recipeTime);
+        recipeContainer = new HBox(imageView, separator1, childContainer, separator2, recipeTime);
         recipeContainer.setMinSize(925, 128);
         recipeContainer.setPrefSize(925, 128);
         recipeContainer.setMaxSize(925, 128);
-        recipeContainer.setMargin(separator, new Insets(0, 0, 0, 3));
+        recipeContainer.setMargin(separator1, new Insets(0, 0, 0, 3));
+        recipeContainer.setMargin(separator2, new Insets(0, 0, 0, 3));
 
     }
 
-    public void updateIngredientListGUI() {
+    // EKSEMPEL GUI
+    public void updateIngredientListGUI(VBox ingredientVBoxList) {
 
         for (Ingredient currentIngredient : ingredients) {
             currentIngredient.updateViewIngredient();
         }
 
+        ArrayList<Object> recipeObjects = new ArrayList<>();
+
+        for (int i = 0; i < ingredients.size(); i++) {
+
+            recipeObjects.add(ingredients.get(i).getContainer());
+
+        }
+
+        List list = recipeObjects;
+        ingredientVBoxList.getChildren().clear();
+        ingredientVBoxList.getChildren().addAll(list);
+
     }
 
+    // EKSEMPEL Getters and setters
     //<editor-fold-desc="Getters'n'Setters">
     public String getName() {
         return name;

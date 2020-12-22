@@ -6,8 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+// EKSEMPEL Nedarvning
 public class Main extends Application {
 
+    // EKSEMPEL @Override
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("mainGUI.fxml"));
@@ -18,6 +20,7 @@ public class Main extends Application {
         Controller.loadArchive();
     }
 
+    // EKSEMPEL @Override
     @Override
     public void stop() {
         Controller.saveArchive();
