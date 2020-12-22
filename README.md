@@ -3,3 +3,5 @@
 This is a test/exam
 
 Here we have a project where you can create, read and store recipes for basicly anything, be it drinks, food, or something else.
+
+Teacher just so you know, i didnt write: "// EKSEMPEL Metode" because i could do that on everything.
