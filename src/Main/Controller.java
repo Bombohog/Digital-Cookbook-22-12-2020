@@ -55,9 +55,6 @@ public class Controller {
     ArrayList<Ingredient> newIngredientList = new ArrayList<>();
     //</editor-fold>
 
-    // TODO list of main tabs
-    // TODO list of all recipes that is to be placed in the recipe list
-
     // EKSEMPEL ArrayList + Kontrolstruktur
     public void updateRecipeList() {
 
@@ -77,14 +74,11 @@ public class Controller {
 
     public void openRecipe(Recipe recipe) {
 
-        // TODO input the correct information in the boxes on the recipeTab
         name.setText(recipe.getName());
         time.setText(recipe.getTime());
-
         description.setText(recipe.getDescription());
-
+        method.setText(recipe.getMethod());
         recipe.updateIngredientListGUI();
-
         SingleSelectionModel<Tab> selectionModel = main.getSelectionModel(); // stores all the tabs from main into a list
         selectionModel.select(recipeTab); // Select recipe tab
 
@@ -94,7 +88,6 @@ public class Controller {
     //<editor-fold-desc="New Recipe">
     public void newRecipe() {
 
-        // TODO
         newIngredientList = new ArrayList<Ingredient>();
         newRecipeName.clear();
         newRecipeDescription.clear();
@@ -154,7 +147,6 @@ public class Controller {
 
     public void addNewIngredient() {
 
-        // TODO
         Ingredient newIngredient = new Ingredient();
         newIngredient.getNewAmount().setOnAction(e -> newIngredient.setAmount(newIngredient.getNewAmount().getText()));
         newIngredient.getNewName().setOnAction(e -> newIngredient.setName(newIngredient.getNewName().getText()));
