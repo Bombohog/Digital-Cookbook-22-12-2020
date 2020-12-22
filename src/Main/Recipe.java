@@ -21,10 +21,11 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Recipe {
+public class Recipe implements Serializable {
 
     // EKSEMPEL Variabler
     private String name; // Name of the dish

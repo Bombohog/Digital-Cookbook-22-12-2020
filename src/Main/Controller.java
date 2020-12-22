@@ -11,8 +11,6 @@ import java.util.List;
 
 public class Controller {
 
-    public ArrayList<Object> recipeArrayList = new ArrayList<>();
-
     // EKSEMPEL GUI
     // TabPane
     @FXML
@@ -60,7 +58,7 @@ public class Controller {
 
         ArrayList<Object> recipeObjects = new ArrayList<>();
 
-        for (int i = 0; i < recipeArrayList.size(); i++) {
+        for (int i = 0; i < RecipeArchive.getRecipes().size(); i++) {
 
             recipeObjects.add(RecipeArchive.getRecipes().get(i).getRecipeContainer());
 
@@ -137,9 +135,8 @@ public class Controller {
             newRecipeTime.clear();
             newRecipeIngredientList.getChildren().clear();
 
-            // Select recipe tab
-            SingleSelectionModel<Tab> selectionModel = main.getSelectionModel(); // stores all the tabs from main into a list
-            selectionModel.select(recipeTab); // selects the tab to open, either with object or index
+            // Open recipe
+            openRecipe(newRecipe);
 
         }
 

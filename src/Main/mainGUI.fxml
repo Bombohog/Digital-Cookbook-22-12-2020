@@ -100,7 +100,12 @@
                               </VBox>
                            </children>
                         </VBox>
-                        <Button layoutX="37.0" layoutY="30.0" mnemonicParsing="false" onAction="#newRecipe" text="New Recipe">
+                        <Button layoutX="160.0" layoutY="30.0" mnemonicParsing="false" onAction="#newRecipe" text="New Recipe">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="37.0" layoutY="30.0" mnemonicParsing="false" onAction="#updateRecipeList" text="Refresh List">
                            <font>
                               <Font size="16.0" />
                            </font>

@@ -9,21 +9,16 @@
 
 package Main;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 // EKSEMPEL Interface
-public class RecipeArchive implements Serializable {
+public class RecipeArchive {
 
     // EKSEMPEL ArrayList
-    private static ArrayList<Recipe> recipes = new ArrayList<Recipe>();
+    private static ArrayList<Recipe> recipes = new ArrayList<>();
 
     public static void addRecipe(Recipe recipe) {
-
-        if (!recipe.getName().equals("") || recipe.getName() != null) {
-            recipes.add(recipe);
-        }
-
+        recipes.add(recipe);
     }
 
     public static void removeRecipe(Recipe recipe) {

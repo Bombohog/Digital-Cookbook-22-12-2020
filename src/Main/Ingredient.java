@@ -15,8 +15,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
+import java.io.Serializable;
+
 // EKSEMPEL Klasser og objekter
-public class Ingredient {
+public class Ingredient implements Serializable {
 
     private String amount; // Amount of the ingredient, 15g, 1 tbsp, 1 tbs, and so on...
     private String name; // Name of ingredient
@@ -86,12 +88,10 @@ public class Ingredient {
         labelName.setPrefSize(163, 25);
         labelName.setMaxSize(163, 25);
 
-        if (!measure.equals("")) {
-            labelMeasure = new Label(", " + measure);
-            labelMeasure.setMinSize(155, 25);
-            labelMeasure.setPrefSize(155, 25);
-            labelMeasure.setMaxSize(155, 25);
-        }
+        labelMeasure = new Label(measure);
+        labelMeasure.setMinSize(155, 25);
+        labelMeasure.setPrefSize(155, 25);
+        labelMeasure.setMaxSize(155, 25);
 
         container = new HBox(labelAmount, labelName, labelMeasure);
         container.setMinSize(430, 25);
