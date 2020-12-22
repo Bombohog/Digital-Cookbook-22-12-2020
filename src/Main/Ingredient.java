@@ -77,11 +77,28 @@ public class Ingredient {
     public void updateViewIngredient() {
 
         labelAmount = new Label(amount);
+        labelAmount.setMinSize(100, 25);
+        labelAmount.setPrefSize(100, 25);
+        labelAmount.setMaxSize(100, 25);
+
         labelName = new Label(" " + name);
+        labelName.setMinSize(163, 25);
+        labelName.setPrefSize(163, 25);
+        labelName.setMaxSize(163, 25);
+
         if (!measure.equals("")) {
             labelMeasure = new Label(", " + measure);
+            labelMeasure.setMinSize(155, 25);
+            labelMeasure.setPrefSize(155, 25);
+            labelMeasure.setMaxSize(155, 25);
         }
+
         container = new HBox(labelAmount, labelName, labelMeasure);
+        container.setMinSize(430, 25);
+        container.setPrefSize(430, 25);
+        container.setMaxSize(430, 25);
+        container.setMargin(labelAmount, new Insets(0, 5, 0 ,0));
+        container.setMargin(labelName, new Insets(0, 5, 0 ,0));
 
     }
 

@@ -78,7 +78,7 @@ public class Controller {
         time.setText(recipe.getTime());
         description.setText(recipe.getDescription());
         method.setText(recipe.getMethod());
-        recipe.updateIngredientListGUI();
+        recipe.updateIngredientListGUI(ingredients);
         SingleSelectionModel<Tab> selectionModel = main.getSelectionModel(); // stores all the tabs from main into a list
         selectionModel.select(recipeTab); // Select recipe tab
 

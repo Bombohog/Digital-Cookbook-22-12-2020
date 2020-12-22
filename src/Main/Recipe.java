@@ -22,6 +22,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Recipe {
 
@@ -93,11 +94,23 @@ public class Recipe {
     }
 
     // EKSEMPEL GUI
-    public void updateIngredientListGUI() {
+    public void updateIngredientListGUI(VBox ingredientVBoxList) {
 
         for (Ingredient currentIngredient : ingredients) {
             currentIngredient.updateViewIngredient();
         }
+
+        ArrayList<Object> recipeObjects = new ArrayList<>();
+
+        for (int i = 0; i < ingredients.size(); i++) {
+
+            recipeObjects.add(ingredients.get(i).getContainer());
+
+        }
+
+        List list = recipeObjects;
+        ingredientVBoxList.getChildren().clear();
+        ingredientVBoxList.getChildren().addAll(list);
 
     }
 
