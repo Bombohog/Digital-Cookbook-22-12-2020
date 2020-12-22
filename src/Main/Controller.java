@@ -11,9 +11,9 @@ import java.util.List;
 
 public class Controller {
 
-
     public ArrayList<Object> recipeArrayList = new ArrayList<>();
 
+    // EKSEMPEL GUI
     // TabPane
     @FXML
     TabPane main;
@@ -58,6 +58,7 @@ public class Controller {
     // TODO list of main tabs
     // TODO list of all recipes that is to be placed in the recipe list
 
+    // EKSEMPEL ArrayList + Kontrolstruktur
     public void updateRecipeList() {
 
         ArrayList<Object> recipeObjects = new ArrayList<>();
@@ -164,10 +165,12 @@ public class Controller {
     }
     //</editor-fold>
 
-    // saving and reading of recipes
+    // EKSEMPEL Persistens
+    // Saving and reading of recipes
     //<editor-fold-desc="Saving'n'Loading">
     public static void saveArchive() {
 
+        // EKSEMPEL Exceptions
         try
         {
             FileOutputStream fos = new FileOutputStream("archiveData");
@@ -187,6 +190,7 @@ public class Controller {
 
     public static void loadArchive() {
 
+        // EKSEMPEL Exceptions
         try
         {
             FileInputStream fis = new FileInputStream("archiveData");

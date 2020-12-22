@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
+// EKSEMPEL Klasser og objekter
 public class Ingredient {
 
     private String amount; // Amount of the ingredient, 15g, 1 tbsp, 1 tbs, and so on...
@@ -46,6 +47,7 @@ public class Ingredient {
         createIngredientContainer();
     }
 
+    // EKSEMPEL GUI
     public void createIngredientContainer() {
 
         newAmount = new TextField();
@@ -83,6 +85,7 @@ public class Ingredient {
 
     }
 
+    // EKSEMPEL Getters and setters
     //<editor-fold-desc="Getters'n'Setters">
     public String getAmount() {
         return amount;

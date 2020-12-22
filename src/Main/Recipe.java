@@ -25,6 +25,7 @@ import java.util.ArrayList;
 
 public class Recipe {
 
+    // EKSEMPEL Variabler
     private String name; // Name of the dish
     private String description; // Some text to describe what it is or something
     private String method; // The way to make the recipe into reality
@@ -48,6 +49,7 @@ public class Recipe {
     Label recipeTime;
     //</editor-fold>
 
+    // EKSEMPEL GUI
     public void createContainer() {
 
         Separator separator = new Separator(Orientation.VERTICAL);
@@ -90,6 +92,7 @@ public class Recipe {
 
     }
 
+    // EKSEMPEL GUI
     public void updateIngredientListGUI() {
 
         for (Ingredient currentIngredient : ingredients) {
@@ -98,6 +101,7 @@ public class Recipe {
 
     }
 
+    // EKSEMPEL Getters and setters
     //<editor-fold-desc="Getters'n'Setters">
     public String getName() {
         return name;

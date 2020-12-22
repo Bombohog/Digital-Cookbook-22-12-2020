@@ -12,8 +12,10 @@ package Main;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+// EKSEMPEL Interface
 public class RecipeArchive implements Serializable {
 
+    // EKSEMPEL ArrayList
     private static ArrayList<Recipe> recipes;
 
     public static void addRecipe(Recipe recipe) {
