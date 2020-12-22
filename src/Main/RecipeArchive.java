@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class RecipeArchive implements Serializable {
 
     // EKSEMPEL ArrayList
-    private static ArrayList<Recipe> recipes;
+    private static ArrayList<Recipe> recipes = new ArrayList<Recipe>();
 
     public static void addRecipe(Recipe recipe) {
 

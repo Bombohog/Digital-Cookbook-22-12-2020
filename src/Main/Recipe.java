@@ -53,7 +53,8 @@ public class Recipe {
     // EKSEMPEL GUI
     public void createContainer() {
 
-        Separator separator = new Separator(Orientation.VERTICAL);
+        Separator separator1 = new Separator(Orientation.VERTICAL);
+        Separator separator2 = new Separator(Orientation.VERTICAL);
 
         imageView = new ImageView(img);
         imageView.setFitWidth(128);
@@ -85,11 +86,12 @@ public class Recipe {
         childContainer.setMaxSize(578, 128);
         childContainer.setMargin(recipeName, new Insets(0, 0, 5, 0));
 
-        recipeContainer = new HBox(imageView, separator, childContainer, separator, recipeTime);
+        recipeContainer = new HBox(imageView, separator1, childContainer, separator2, recipeTime);
         recipeContainer.setMinSize(925, 128);
         recipeContainer.setPrefSize(925, 128);
         recipeContainer.setMaxSize(925, 128);
-        recipeContainer.setMargin(separator, new Insets(0, 0, 0, 3));
+        recipeContainer.setMargin(separator1, new Insets(0, 0, 0, 3));
+        recipeContainer.setMargin(separator2, new Insets(0, 0, 0, 3));
 
     }
 

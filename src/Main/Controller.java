@@ -148,9 +148,9 @@ public class Controller {
     public void addNewIngredient() {
 
         Ingredient newIngredient = new Ingredient();
-        newIngredient.getNewAmount().setOnAction(e -> newIngredient.setAmount(newIngredient.getNewAmount().getText()));
-        newIngredient.getNewName().setOnAction(e -> newIngredient.setName(newIngredient.getNewName().getText()));
-        newIngredient.getNewMeasure().setOnAction(e -> newIngredient.setMeasure(newIngredient.getNewMeasure().getText()));
+        newIngredient.getNewAmount().setOnKeyTyped(e -> newIngredient.setAmount(newIngredient.getNewAmount().getText()));
+        newIngredient.getNewName().setOnKeyTyped(e -> newIngredient.setName(newIngredient.getNewName().getText()));
+        newIngredient.getNewMeasure().setOnKeyTyped(e -> newIngredient.setMeasure(newIngredient.getNewMeasure().getText()));
         newRecipeIngredientList.getChildren().add(newIngredient.getNewContainer());
         newIngredientList.add(newIngredient);
 
@@ -204,8 +204,6 @@ public class Controller {
             c.printStackTrace();
             return;
         }
-
-        new Controller().updateRecipeList(); // TODO
 
     }
     //</editor-fold>
